@@ -65,3 +65,5 @@ Heck, if you have resources you think might be helpful let me know (for instance
 Ok, I think I've gone on long enough.  If you are interested, or want to know more, you can find me on Twitter or you can email me directly at <admin@mageeworld.com>.
 
 Thanks for *listening*
+
+If you have made it all the way to the bottom, I created a [typeform](https://mageeworld.typeform.com/to/kL9gru) to gauge levels of interest in the idea, and some info regarding how to build it.  Please fill it out if you get the change.		
