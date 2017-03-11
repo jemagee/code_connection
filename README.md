@@ -21,6 +21,9 @@ As I said, these are currently being used because I know them best, if you are i
 
 Please, contribute.  Anyone who wants to contribute is welcome.  Use the Issues (or the new Projects tab if you want) as a way to make suggestions that you want to see or even want to create.  This is the initial README doc and as such the application doesn't have much, but as you can see above, we do have a great logo.  As such, the application is open to things, please read the mission statement, check the issues, and projects, and see what you might want to work on, or create a new idea for us to work on.
 
+As I want code connection to follow the principles of test-driven development (as I understand them), please ensure that you've written tests to ensure your additions do what you wish them to do, and that you've run the whole test suite to make sure all existing tests pass.  
+
+
 
 ### Getting Started
 
