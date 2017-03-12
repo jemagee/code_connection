@@ -10,11 +10,12 @@
   </head>
 
   <body>
+    <% flash.each do |type, value| %>
+      <%= value %>
+    <% end %>
     <%= render 'shared/navbar' %>
 
-    <% flash.each do |type, value| %>
-  	  <%= value %>
-    <% end %>
+
     <div class="container-fluid">
       <%= yield %>
     </div>
