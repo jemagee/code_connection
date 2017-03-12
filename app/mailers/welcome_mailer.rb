@@ -7,5 +7,3 @@ class WelcomeMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Welcome to Code Connection')
   end
 end
-
-#I used placeholder here because I couldn't find and url for Code Connection
