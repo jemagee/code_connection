@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Code Connection</h1>
+    <!-- @user.name :the attribute name doesn't exist yet so this has to be added later. Otherwise tests are not passing now. -->
+
+    <p>
+      You have successfully signed up to codeconnection.com,
+      your username is:
+      <!-- @user.login  -->
+      <br>
+    </p>
+    <p>
+      To login to the site, just follow this link:<%= @url %>.
+    </p>
+
+    <p>But first, let me tell you a little bit more about Code Connection:
+    The idea behind Code Connection came to life during one of the weekly Twitter chats hosted by <%= link_to "CodeNewbie.org", "http://www.codenewbie.org/", :target => "_blank" %>.</p>
+
+    <p>It is well known about the importance of pair programming and code reviews while coding, especially for those who are just starting to code. However, sometimes, it's quite difficult to find someone to code with. Our mission is to create a safe environment where people can connect through code, exchange ideas, find people to work with, etc.</p>
+
+    <p>So... How does Code Connection work? Well, it is fairly easy, you only have to create a user profile where you specify your coding skills and your specific needs (Whether you are looking for someone to work with on specific projects or if you are looking to share your knowledge with others by becoming a mentor, etc.)</p>
+    <br/>
+
+    <p>Thanks for joining and have a great day!</p>
+    
+    So <%= link_to "Lets get started", root_url %>
+    
+    <p> Code Connection team </p>
+  </body>
+</html>
+
+<!-- change placeholder for code connection email address -->
