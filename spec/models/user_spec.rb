@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-	it {should validate_presence_of(:email)}
-	it {should validate_presence_of(:username)}
+  it {should validate_presence_of(:email)}
+  it {should validate_presence_of(:username)}
 
-	describe "Admin default value should be false" do
+  describe "Admin default value should be false" do
 
-		let(:user) {User.new}
+    let(:user) {User.new}
 
-		it "should have a default admin of false" do
-			expect(user.admin).to eq false
-		end
-	end
+    it "should have a default admin of false" do
+      expect(user.admin).to eq false
+    end
+  end
 
   describe "Username validation" do
     let!(:existing_user) { create(:user, username: 'user_1') }
