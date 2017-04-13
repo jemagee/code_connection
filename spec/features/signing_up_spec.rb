@@ -9,6 +9,7 @@ RSpec.feature "Testing the Sign Up Function of Devise" do
 		scenario "successfully signs up" do
 
 			fill_in "user[email]", with: "test@example.com"
+			fill_in "user[username]", with: "test_user"
 			fill_in "user[password]", with: "password"
 			fill_in "user[password_confirmation]", with: "password"
 
