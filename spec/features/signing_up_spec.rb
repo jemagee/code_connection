@@ -20,10 +20,10 @@ RSpec.feature "Testing the Sign Up Function of Devise" do
 		end
 	end
 
-	context "with an already registered email" do
+	context "with already exiisting user information" do
 		let!(:user) {FactoryGirl.create(:user)}
 
-		scenario "fails the sign up" do
+		scenario "fails the sign up without a unique email" do
 
 			fill_in "user[email]", with: user.email
 			fill_in "user[password]", with: "password"
@@ -32,6 +32,19 @@ RSpec.feature "Testing the Sign Up Function of Devise" do
 			click_button "Sign up"
 
 			expect(page).to have_content("Email has already been taken")
+			expect(current_url).to_not eq root_url
+		end
+
+		scenario "fails the sign up without a unique username" do
+
+			fill_in "user[email]", with: "totally_random@exampleworld.com"
+			fill_in "user[username]", with: user.username
+			fill_in "user[password]", with: "password"
+			fill_in "user[password_confirmation]", with: "password"
+
+			click_button "Sign up"
+
+			expect(page).to have_content("Username has already been taken")
 			expect(current_url).to_not eq root_url
 		end
 	end
