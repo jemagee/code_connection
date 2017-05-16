@@ -9,10 +9,14 @@ class Admin::SkillsController < Admin::ApplicationController
 	end
 
 	def create
-		Skill.create(skills_params)
-		flash[:success] = "The skill was added"
-		redirect_to admin_skills_path
-
+		@skill = Skill.new(skills_params)
+		if @skill.save
+			flash[:success] = "The skill was added"
+			redirect_to admin_skills_path
+		else
+			flash[:warning] = "The skill was not added"
+			render 'new'
+		end
 	end
 
 	private

@@ -1,3 +1,8 @@
+<% if @skill.errors.any? %>
+	<% @skill.errors.full_messages.each do |msg| %>
+		<%= msg %>
+	<% end %>
+<% end %>
 <%= form_for [:admin, @skill] do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name %>
