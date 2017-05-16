@@ -1,0 +1,6 @@
+<%= form_for [:admin, @skill] do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit "Add Skill" %>
+<% end %>
