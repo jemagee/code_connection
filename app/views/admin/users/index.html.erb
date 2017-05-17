@@ -1,6 +1,13 @@
 <h1>List of Users</h1>
 <ul>
 	<% @users.each do |user| %>
-		<li><%= user.username %></li>
+		<li>
+			<%= content_tag(:div, id: user.id) do %>
+				<%= user.username %>
+				<% unless user.admin? %>
+					<%= link_to "Delete User", admin_user_path(user), method: :delete, data: {confirm: "Are you sure you want to delete this user?"} %>
+				<% end %>
+			<% end %>
+		</li>
 	<% end %>
 </ul>
