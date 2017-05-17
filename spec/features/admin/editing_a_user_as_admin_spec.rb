@@ -9,18 +9,28 @@ RSpec.feature "Admin editing of a user" do
 	before do
 		login_as(admin)
 		visit admin_users_path
-	end
-
-	scenario "works properly" do 
 		within("div##{user2.id}") do
 			click_link "Edit User"
 		end
+	end
 
-		fill_in "user[username]", with: "New UserName to Try"
+	scenario "works properly" do 
+		fill_in "user[username]", with: "NewUserName"
 
 		click_button "Update User"
 
 		expect(page).to have_content("User Successfully Updated")
 		expect(current_url).to eq admin_root_url
 	end
+
+	scenario "errors properly when necessary" do
+		fill_in "user[username]", with: user.username
+
+		click_button "Update User"
+
+		expect(page).to have_content("User Not Updated")
+		expect(page).to have_content("Username has already been taken")
+	end
+
+
 end

@@ -16,9 +16,17 @@ class Admin::UsersController < Admin::ApplicationController
 
   def update
   	@user = User.find(params[:id])
-  	@user.update(user_params)
-  	flash[:success] = "User Successfully Updated"
-  	redirect_to admin_root_path
+  	if params[:user][:password].blank?
+  		params[:user].delete(:password)
+  		params[:user].delete(:password_confirmation)
+  	end
+  	if @user.update(user_params)
+  		flash[:success] = "User Successfully Updated!"
+  		redirect_to admin_root_path
+  	else
+  		flash[:warning] = "User Not Updated"
+  		render "edit"
+  	end
   end
 
   private 
