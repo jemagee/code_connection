@@ -4,6 +4,7 @@
 		<li>
 			<%= content_tag(:div, id: user.id) do %>
 				<%= user.username %>
+				<%= link_to "Edit User", edit_admin_user_path(user) %>
 				<% unless user.admin? %>
 					<%= link_to "Delete User", admin_user_path(user), method: :delete, data: {confirm: "Are you sure you want to delete this user?"} %>
 				<% end %>
