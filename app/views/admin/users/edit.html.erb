@@ -14,17 +14,6 @@
 	<%= f.text_field :username, :class => 'form-control', :placeholder => 'Username' %>
 	</div>
 
-	<div class="form-group">
-	<% if @validatable %>
-	  <em>(<%= @minimum_password_length %> characters minimum)</em>
-	<% end %><br />
-	<%= f.password_field :password, autocomplete: "off", :class => 'form-control', :placeholder => 'Password' %>
-	</div>
-
-	<div class="form-group">
-	<%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control', :placeholder => 'Confirm Password' %>
-	</div>
-
 	<div class="action">
 	<%= f.submit "Update User" %>
 	</div>
