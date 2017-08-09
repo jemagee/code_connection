@@ -1,1 +1,5 @@
 Profile page of <%= @user.username %>
+
+<% if current_user.id == @user.id %>
+	<%= link_to "Edit Your Profile", edit_user_path(@user) %>
+<% end %>
