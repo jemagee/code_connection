@@ -1,1 +1,8 @@
 <h1>Edit Your Profile - <%= @user.username %></h1>
+<%= form_for(@user) do |f| %>
+
+	<%= f.label :country_code, "Select Country" %>
+	<%= f.country_select :country_code %>
+
+	<%= f.submit "Update Profile" %>
+<% end %>

@@ -12,6 +12,11 @@ class User < ApplicationRecord
     format: { with: /\A[a-zA-Z0-9_\.]*\z/ },
     length: { minimum: 6, allow_blank: true }
 
+  def country_name
+    country = ISO3166::Country[country_code]
+    country.translations[I18n.locale.to_s] || country.name
+  end
+
   private
 
   def send_welcome_email
@@ -25,4 +30,6 @@ class User < ApplicationRecord
       where(conditions.to_h).where(query, { value: login.downcase }).first
     end
   end
+
+
 end
